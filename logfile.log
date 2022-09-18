@@ -1,0 +1,9 @@
+2022-09-18 20:41:00,173 INFO  [Log] confirmHomePage() testing is PASSED 
+2022-09-18 20:41:05,151 INFO  [Log] searchAndClear() testing is PASSED 
+2022-09-18 20:41:09,750 INFO  [Log] searchAProduct() testing is PASSED 
+2022-09-18 20:41:13,673 INFO  [Log] selectAProduct() testing is PASSED 
+2022-09-18 20:41:15,801 INFO  [Log] addToTxt() testing is PASSED 
+2022-09-18 20:41:24,693 INFO  [Log] addProductToCart() testing is PASSED 
+2022-09-18 20:41:24,693 INFO  [Log] comparePrices() testing is PASSED 
+2022-09-18 20:41:27,987 ERROR [Log] increaseProduct() testing is FAILED because of expected: <1338.0> but was: <1.338> 
+2022-09-18 20:41:30,175 INFO  [Log] clearCart() testing is PASSED 
