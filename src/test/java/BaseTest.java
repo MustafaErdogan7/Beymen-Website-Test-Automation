@@ -1,12 +1,10 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.engine.execution.JupiterEngineExecutionContext;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+
+import java.awt.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -20,6 +18,14 @@ public class BaseTest {
         String url="https://www.beymen.com/";
         driver.get(url);
         driver.manage().window().maximize();
+
+        // To move mouse to top-left of the page.
+        try {
+            Robot robot = new Robot();
+            robot.mouseMove(0,0);
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
     }
     @AfterAll
     public void tearDown(){
