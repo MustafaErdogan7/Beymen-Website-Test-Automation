@@ -1,9 +1,9 @@
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 
 public class DriveTest extends BaseTest{
@@ -20,9 +20,9 @@ public class DriveTest extends BaseTest{
     @Test
     @Order(2)
     public void searchAndClear() throws InterruptedException {
-        String productType="şort";
         homePage=new HomePage(driver);
         homePage.acceptCookies();
+        String productType=homePage.getSearchNames()[1];
         homePage.searchBox().search(productType);
         Thread.sleep(2000);
         for (int i = 1; i <=productType.length() ; i++) {
@@ -36,9 +36,8 @@ public class DriveTest extends BaseTest{
         homePage=new HomePage(driver);
         homePage.acceptCookies();
         productPage=new ProductPage(driver);
-        homePage.searchBox.search("göm");
         Thread.sleep(1500);
-        homePage.searchBox().searchAndPressEnter("lek");
+        homePage.searchBox().searchAndPressEnter(homePage.getSearchNames()[0]);
         Thread.sleep(2000);
         Assertions.assertTrue(productPage.isOnProductPage(),"Not on products page");
     }
